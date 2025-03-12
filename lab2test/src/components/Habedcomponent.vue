@@ -80,17 +80,19 @@ export default {
   // hebd
   methods: {
     addNewStudent() {
-      const newId = this.students[this.students.length - 1].id + 1;
+      if (this.newStd.name != "" && this.newStd.city != "") {
+        const newId = this.students[this.students.length - 1].id + 1;
 
-      this.students.push({
-        id: newId,
-        name: this.newStd.name,
-        city: this.newStd.city,
-      });
+        this.students.push({
+          id: newId,
+          name: this.newStd.name,
+          city: this.newStd.city,
+        });
 
-      this.newStd.name = "";
-      this.newStd.city = "";
-      //   this.isShow = false;
+        this.newStd.name = "";
+        this.newStd.city = "";
+        //   this.isShow = false;
+      }
     },
   },
 };
